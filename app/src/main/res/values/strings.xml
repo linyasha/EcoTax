@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EcoTax</string>
+    <string name="name_app">EcoTax</string>
+    <string name="motto_app">Move more economically</string>
+
+    <!--    Strings for On Boarding Screen_______________________________________________________-->
+    <!--    Titles -->
+    <string name="first_slide_title">Find fellow travelers</string>
+    <string name="second_slide_title">The most profitable services</string>
+    <string name="third_slide_title">Open society</string>
+    <string name="fourth_slide_title">Safety</string>
+
+    <!--    Description-->
+    <string name="first_slide_desc">We will find you a travel companion to make your taxi journey more economical.</string>
+    <string name="second_slide_desc">The best taxi service will be selected for you based on the specified criteria.</string>
+    <string name="third_slide_desc">Add friends to make comfortable trips in the future.</string>
+    <string name="fourth_slide_desc">A car can be ordered only after confirmation of the presence of all participants in the trip near you.
+        \n You can also sort your travel companions by rating, which is based on feedback after each trip.  </string>
+
+    <!--    Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+    <!--    ________________________________________________________________________________-->
+</resources>
