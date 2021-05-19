@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:background="#ffdd30"
+            android:background="@drawable/custom_button"
             android:text="@string/let_get_started" />
 
         <LinearLayout

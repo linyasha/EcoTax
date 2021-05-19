@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTax">
-        <activity android:name=".app.activity.OnBoarding"></activity>
+        <activity android:name=".app.activity.LoginSignup.LoginSignUp" />
+        <activity android:name=".app.activity.OnBoarding" />
         <activity android:name=".app.activity.DashBoard" />
         <activity android:name=".app.activity.SplashScreen">
             <intent-filter>
