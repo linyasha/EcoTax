@@ -3,6 +3,13 @@
     <string name="name_app">EcoTax</string>
     <string name="motto_app">Move more economically</string>
 
+    <!--    General Strings-->
+    <string name="authentication_heading">Welcome Back</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget Password</string>
+
     <!--    Strings for On Boarding Screen_______________________________________________________-->
     <!--    Titles -->
     <string name="first_slide_title">Find fellow travelers</string>

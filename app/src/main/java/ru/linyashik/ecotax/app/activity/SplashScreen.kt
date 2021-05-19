@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import ru.linyashik.ecotax.R
+import ru.linyashik.ecotax.app.activity.LoginSignup.Authentication
 import ru.linyashik.ecotax.databinding.SplashActivityBinding
 
 class SplashScreen : AppCompatActivity() {
@@ -60,7 +61,7 @@ class SplashScreen : AppCompatActivity() {
                 finish()
             }
             else {
-                val intent = Intent(this, DashBoard::class.java)
+                val intent = Intent(this, Authentication::class.java)
                 startActivity(intent)
                 finish()
             }
