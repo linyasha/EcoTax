@@ -5,10 +5,28 @@
 
     <!--    General Strings-->
     <string name="authentication_heading">Welcome Back</string>
+
+    <!--    General Authentification String-->
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
     <string name="remember_me">Remember me</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="password">Password</string>
     <string name="forget_password">Forget Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="enter_full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="select_your_age">Select Your Age</string>
+
 
     <!--    Strings for On Boarding Screen_______________________________________________________-->
     <!--    Titles -->
@@ -18,8 +36,8 @@
     <string name="fourth_slide_title">Safety</string>
 
     <!--    Description-->
-    <string name="first_slide_desc">We will find you a travel companion to make your taxi journey more economical.</string>
-    <string name="second_slide_desc">The best taxi service will be selected for you based on the specified criteria.</string>
+    <string name="first_slide_desc">We will find you a travel companion to make \nyour taxi journey more economical.</string>
+    <string name="second_slide_desc">The best taxi service will be selected for \nyou based on the specified criteria.</string>
     <string name="third_slide_desc">Add friends to make comfortable trips in the future.</string>
     <string name="fourth_slide_desc">A car can be ordered only after confirmation of the presence of all participants in the trip near you.
         \n You can also sort your travel companions by rating, which is based on feedback after each trip.  </string>

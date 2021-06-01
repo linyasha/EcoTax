@@ -1,6 +1,5 @@
 package ru.linyashik.ecotax.app.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.*
@@ -10,7 +9,7 @@ import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import ru.linyashik.ecotax.R
-import ru.linyashik.ecotax.app.activity.LoginSignup.Authentication
+import ru.linyashik.ecotax.app.activity.loginSignup.Authentication
 import ru.linyashik.ecotax.databinding.SplashActivityBinding
 
 class SplashScreen : AppCompatActivity() {
