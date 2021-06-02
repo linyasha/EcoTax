@@ -8,39 +8,53 @@
         tools:context=".app.activity.loginSignup.register.Register"
         android:background="@color/yellowMain"
         android:padding="30dp"
-        android:transitionName="transition_register">
+        android:transitionName="transition_register"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <ImageView
+            android:id="@+id/logo_login"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-20dp"
+            android:padding="5dp"
+            android:src="@drawable/car"
+            android:transitionName="logo_image"/>
 
-            <ImageView
-                android:id="@+id/signup_back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:src="@drawable/general_back_icon"
-                android:transitionName="transition_back_arrow_btn"/>
+        <TextView
+            android:id="@+id/logo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="@font/muli_black"
+            android:text="@string/welcome_register"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:transitionName="logo_text"/>
 
-            <TextView
-                android:id="@+id/signup_title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/muli_black"
-                android:text="@string/create_account"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="40sp"
-                android:transitionName="transition_title_text"/>
+        <TextView
+            android:id="@+id/slogo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_up_to_continue"
+            android:textSize="16sp"
+            android:transitionName="logo_desc" />
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="20dp"
+                android:focusableInTouchMode="true"
+                android:focusable="true">
 
                 <!--EditText Full Name-->
                 <com.google.android.material.textfield.TextInputLayout
@@ -66,6 +80,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <!--UserName-->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_username_reg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -76,7 +91,8 @@
                     app:startIconDrawable="@drawable/field_username_icon"
                     app:startIconTint="@color/black"
                     app:endIconMode="clear_text"
-                    app:endIconTint="@color/black">
+                    app:endIconTint="@color/black"
+                    android:transitionName="username">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -111,6 +127,7 @@
 
                 <!--Password-->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_password_reg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -122,7 +139,8 @@
                     app:startIconTint="@color/black"
                     app:passwordToggleTint="@color/black"
                     app:passwordToggleEnabled="true"
-                    app:endIconTint="@color/black">
+                    app:endIconTint="@color/black"
+                    android:transitionName="password">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -135,28 +153,26 @@
 
             </LinearLayout>
 
-
         <Button
-            android:id="@+id/signup_next_btn"
+            android:id="@+id/register_next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/next_btn"
+            android:text="@string/register"
             android:textColor="@color/white"
             android:background="@drawable/custom_button_black"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:elevation="5dp"
             android:layout_marginTop="20dp"
-            android:transitionName="transition_next_btn"/>
+            android:transitionName="login_btn"/>
 
         <Button
-            android:id="@+id/signup_login_btn"
+            android:id="@+id/register_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            android:text="@string/already_have_account_login"
             android:textColor="@color/black"
             android:background = "@null"
             android:textAllCaps="false"
-            android:layout_marginTop="20dp"
             android:transitionName="transition_login-btn"/>
 
     </LinearLayout>

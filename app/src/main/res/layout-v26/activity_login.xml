@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/logo_login"
+            android:id="@+id/login_back_button"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="-10dp"
@@ -42,20 +42,16 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_in_to_continue"
             android:layout_marginTop="20dp"
-            android:textSize="16sp"
-            android:transitionName="logo_desc"/>
+            android:textSize="16sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:focusableInTouchMode="true"
-            android:focusable="true">
+            android:layout_marginBottom="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -66,11 +62,11 @@
                 app:startIconDrawable="@drawable/field_username_icon"
                 app:startIconTint="@color/black"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/black"
-                android:transitionName="username">
+                app:endIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:focusedByDefault="false"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/muli"
                     android:textColor="@color/black"
@@ -79,7 +75,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -90,8 +85,7 @@
                 app:startIconDrawable="@drawable/field_password_icon"
                 app:startIconTint="@color/black"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/black"
-                android:transitionName="password">
+                app:endIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -130,15 +124,13 @@
             </RelativeLayout>
 
             <Button
-                android:id="@+id/login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login"
                 android:textColor="@color/white"
                 android:layout_marginTop="20dp"
                 android:elevation="5dp"
-                android:background="@drawable/custom_button_black"
-                android:transitionName="login_btn"/>
+                android:background="@drawable/custom_button_black"/>
 
             <Button
                 android:id="@+id/create_account_btn"
@@ -148,8 +140,7 @@
                 android:background="@null"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:transitionName="transition_login-btn"/>
+                android:layout_gravity="center" />
 
         </LinearLayout>
     </LinearLayout>

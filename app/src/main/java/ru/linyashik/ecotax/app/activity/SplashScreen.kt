@@ -1,15 +1,20 @@
 package ru.linyashik.ecotax.app.activity
 
+import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.*
+import android.util.Pair
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import ru.linyashik.ecotax.R
-import ru.linyashik.ecotax.app.activity.loginSignup.Authentication
+
+import ru.linyashik.ecotax.app.activity.loginSignup.Login
 import ru.linyashik.ecotax.databinding.SplashActivityBinding
 
 class SplashScreen : AppCompatActivity() {
@@ -50,20 +55,30 @@ class SplashScreen : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
             //Run OnBoarding once
             onBoardingScreen = getSharedPreferences("OnBoardingScreen", MODE_PRIVATE)
-            val isFirstTime = onBoardingScreen.getBoolean("firstTimeRunApplication", true)
+            val isFirstTime = onBoardingScreen.getBoolean(firstTimeRunApplication, true)
             if(isFirstTime) {
                 val editor = onBoardingScreen.edit()
-                editor.putBoolean("firstTimeRunApplication", false)
+                editor.putBoolean(firstTimeRunApplication, false)
                 editor.apply()
                 val intent = Intent(this, OnBoarding::class.java)
                 startActivity(intent)
-                finish()
+                
             }
             else {
-                val intent = Intent(this, Authentication::class.java)
-                startActivity(intent)
-                finish()
+                //Open with animation
+                val intent = Intent(this, Login::class.java)
+                @SuppressLint("ObsoleteSdkInt")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    val pair1 = Pair(findViewById<View>(R.id.imageCar), "logo_image")
+                    val pair2 = Pair(findViewById<View>(R.id.nameApplication), "logo_text")
+                    val options = ActivityOptions.makeSceneTransitionAnimation(this, pair1, pair2)
+                    startActivity(intent, options.toBundle())
+                }
+                else {
+                    startActivity(intent)
+                }
             }
+            finish()
             }, SPLASH_SCREEN.toLong())
     }
 

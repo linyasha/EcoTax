@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.viewpager.widget.ViewPager
 import ru.linyashik.ecotax.R
-import ru.linyashik.ecotax.app.activity.loginSignup.Authentication
+import ru.linyashik.ecotax.app.activity.loginSignup.Login
 import ru.linyashik.ecotax.app.adapters.SliderAdapter
 import ru.linyashik.ecotax.databinding.ActivityOnBoardingBinding
 
@@ -76,7 +76,7 @@ class OnBoarding : AppCompatActivity() {
         })
 
         binding.skipBtn.setOnClickListener {
-            startActivity(Intent(this, Authentication::class.java))
+            startActivity(Intent(this, Login::class.java))
             finish()
         }
 
@@ -85,7 +85,7 @@ class OnBoarding : AppCompatActivity() {
         }
 
         binding.getStartedBtn.setOnClickListener {
-            startActivity(Intent(this, Authentication::class.java))
+            startActivity(Intent(this, Login::class.java))
             finish()
         }
     }

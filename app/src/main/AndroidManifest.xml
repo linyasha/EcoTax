@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTax">
-        <activity android:name=".app.activity.loginSignup.register.Register3rdClass"></activity>
-        <activity android:name=".app.activity.loginSignup.register.Register2ndClass" />
-        <activity android:name=".app.activity.loginSignup.register.Register" />
-        <activity android:name=".app.activity.loginSignup.Login" />
-        <activity android:name=".app.activity.loginSignup.Authentication" />
-        <activity android:name=".app.activity.OnBoarding" />
+        <activity android:name=".app.activity.loginSignup.register.Register3rdClass"/>
+        <activity android:name=".app.activity.loginSignup.register.Register2ndClass"/>
+        <activity android:name=".app.activity.loginSignup.register.Register"/>
+        <activity android:name=".app.activity.loginSignup.Login"/>
+        <activity android:name=".app.activity.OnBoarding"/>
         <activity android:name=".app.activity.DashBoard" />
         <activity android:name=".app.activity.SplashScreen">
             <intent-filter>

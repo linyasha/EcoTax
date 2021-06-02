@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/find_fellow_travels" />
+        app:srcCompat="@drawable/find_fellow_travels"/>
 
     <TextView
         android:id="@+id/slider_heading"
