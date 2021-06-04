@@ -13,8 +13,7 @@ import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import ru.linyashik.ecotax.R
-
-import ru.linyashik.ecotax.app.activity.loginSignup.Login
+import ru.linyashik.ecotax.app.activity.loginSignup.AuthenticationMain
 import ru.linyashik.ecotax.databinding.SplashActivityBinding
 
 class SplashScreen : AppCompatActivity() {
@@ -65,18 +64,8 @@ class SplashScreen : AppCompatActivity() {
                 
             }
             else {
-                //Open with animation
-                val intent = Intent(this, Login::class.java)
-                @SuppressLint("ObsoleteSdkInt")
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    val pair1 = Pair(findViewById<View>(R.id.imageCar), "logo_image")
-                    val pair2 = Pair(findViewById<View>(R.id.nameApplication), "logo_text")
-                    val options = ActivityOptions.makeSceneTransitionAnimation(this, pair1, pair2)
-                    startActivity(intent, options.toBundle())
-                }
-                else {
-                    startActivity(intent)
-                }
+                val intent = Intent(this, AuthenticationMain::class.java)
+                startActivity(intent)
             }
             finish()
             }, SPLASH_SCREEN.toLong())

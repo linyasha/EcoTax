@@ -5,9 +5,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".app.activity.loginSignup.register.Register"
+        tools:context=".app.activity.loginSignup.RegisterFragment"
         android:background="@color/yellowMain"
-        android:padding="30dp"
         android:transitionName="transition_register"
         android:focusableInTouchMode="true"
         android:focusable="true">
@@ -154,7 +153,7 @@
             </LinearLayout>
 
         <Button
-            android:id="@+id/register_next_btn"
+            android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register"
@@ -166,14 +165,14 @@
             android:transitionName="login_btn"/>
 
         <Button
-            android:id="@+id/register_login_btn"
+            android:id="@+id/have_account_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:text="@string/already_have_account_login"
-            android:textColor="@color/black"
-            android:background = "@null"
             android:textAllCaps="false"
-            android:transitionName="transition_login-btn"/>
+            android:textColor="@color/black"
+            android:transitionName="transition_login-btn" />
 
     </LinearLayout>
 

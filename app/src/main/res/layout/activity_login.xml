@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellowMain"
-    android:padding="30dp"
-    tools:context=".app.activity.loginSignup.Login"
+    tools:context=".app.activity.loginSignup.LoginFragment"
     android:transitionName="transition_login">
 
     <LinearLayout
