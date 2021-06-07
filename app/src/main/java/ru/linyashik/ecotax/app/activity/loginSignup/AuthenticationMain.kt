@@ -9,7 +9,8 @@ import ru.linyashik.ecotax.R
 import ru.linyashik.ecotax.databinding.ActivityAuthenticationMainBinding
 
 class AuthenticationMain : AppCompatActivity(), LoginFragment.ActionPerformedListenerLoginFragment,
-RegisterFragment.ActionPerformedListenerRegisterFragment{
+RegisterFragment.ActionPerformedListenerRegisterFragment,
+    Register2Fragment.ActionPerformedListenerRegister2Fragment {
 
     private lateinit var binding: ActivityAuthenticationMainBinding
 
@@ -41,7 +42,12 @@ RegisterFragment.ActionPerformedListenerRegisterFragment{
     }
 
     override fun actionClickRegisterBtn() {
-
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment,
+                R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment)
+            .addToBackStack(null)
+            .replace(R.id.container, Register2Fragment())
+            .commit()
     }
 
     override fun actionClickNewUserBtn() {
@@ -58,6 +64,22 @@ RegisterFragment.ActionPerformedListenerRegisterFragment{
                 R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment)
             .replace(R.id.container, LoginFragment())
             .commit()
+    }
+
+    override fun actionClickNextBtn() {
+        TODO("Not yet implemented")
+    }
+
+    override fun actionClickLoginRegister2Fragment() {
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment,
+                R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment)
+            .replace(R.id.container, LoginFragment())
+            .commit()
+    }
+
+    override fun actionClickBackRegister2Fragment() {
+
     }
 
 

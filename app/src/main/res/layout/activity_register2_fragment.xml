@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".app.activity.loginSignup.register.Register2ndClass"
     android:background="@color/yellowMain"
-    android:padding="30dp"
     android:transitionName="transition_register">
 
 
@@ -120,7 +119,6 @@
             android:textColor="@color/black"
             android:background = "@null"
             android:textAllCaps="false"
-            android:layout_marginTop="20dp"
             android:transitionName="transition_login-btn"/>
 
     </LinearLayout>

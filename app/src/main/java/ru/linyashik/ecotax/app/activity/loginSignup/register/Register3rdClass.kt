@@ -7,6 +7,6 @@ import ru.linyashik.ecotax.R
 class Register3rdClass : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register3rd_class)
+        setContentView(R.layout.activity_register3_fragment)
     }
 }

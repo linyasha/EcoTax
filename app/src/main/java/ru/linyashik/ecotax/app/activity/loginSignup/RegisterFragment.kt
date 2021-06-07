@@ -42,13 +42,10 @@ class RegisterFragment: Fragment() {
         binding?.haveAccountBtn?.setOnClickListener {
           listener?.actionClickHaveAccount()
         }
-//        binding?.loginBtn?.setOnClickListener {
-//            listener?.actionClickLoginBtn()
-//        }
-//
-//        binding?.createAccountBtn?.setOnClickListener {
-//            listener?.actionClickNewUserBtn()
-//        }
+        binding?.registerBtn?.setOnClickListener {
+            listener?.actionClickRegisterBtn()
+        }
+
     }
 
 }
