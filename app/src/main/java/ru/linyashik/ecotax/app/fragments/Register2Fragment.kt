@@ -1,4 +1,4 @@
-package ru.linyashik.ecotax.app.activity.loginSignup
+package ru.linyashik.ecotax.app.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -6,17 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister2Fragment
 import ru.linyashik.ecotax.databinding.ActivityRegister2FragmentBinding
 
 
 class Register2Fragment: Fragment() {
-
-    //Communication with activity
-    interface ActionPerformedListenerRegister2Fragment {
-        fun actionClickNextBtn()
-        fun actionClickLoginRegister2Fragment()
-        fun actionClickBackRegister2Fragment()
-    }
 
     //Variables
     private var listener: ActionPerformedListenerRegister2Fragment? = null
@@ -42,15 +36,15 @@ class Register2Fragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.signupLoginBtn?.setOnClickListener {
-            listener?.actionClickLoginRegister2Fragment()
+            listener?.register2FragmentActionClickLoginBtn()
         }
 
         binding?.signupNextBtn?.setOnClickListener {
-            listener?.actionClickNextBtn()
+            listener?.register2FragmentActionClickNextBtn()
         }
 
         binding?.signupBackButton?.setOnClickListener {
-            listener?.actionClickBackRegister2Fragment()
+            listener?.register2FragmentActionClickBackBtn()
         }
     }
 

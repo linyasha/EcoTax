@@ -1,4 +1,4 @@
-package ru.linyashik.ecotax.app.activity.loginSignup
+package ru.linyashik.ecotax.app.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -6,25 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister3Fragment
 import ru.linyashik.ecotax.databinding.ActivityRegister2FragmentBinding
+import ru.linyashik.ecotax.databinding.ActivityRegister3FragmentBinding
 
 class Register3Fragment: Fragment() {
 
-    //Communication with activity
-    interface ActionPerformedListenerRegister2Fragment {
-        fun actionClickNextBtn()
-        fun actionClickLoginRegister3Fragment()
-        fun actionClickBackRegister3Fragment()
-    }
-
     //Variables
-    private var listener: ActionPerformedListenerRegister2Fragment? = null
-    private var binding: ActivityRegister2FragmentBinding? = null
+    private var listener: ActionPerformedListenerRegister3Fragment? = null
+    private var binding: ActivityRegister3FragmentBinding? = null
 
     //Attach listener to MainActivity
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as ActionPerformedListenerRegister2Fragment
+        listener = context as ActionPerformedListenerRegister3Fragment
     }
 
     override fun onCreateView(
@@ -32,7 +27,7 @@ class Register3Fragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = ActivityRegister2FragmentBinding.inflate(layoutInflater)
+        binding = ActivityRegister3FragmentBinding.inflate(layoutInflater)
         val view = binding?.root
         return view
 
@@ -41,15 +36,15 @@ class Register3Fragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.signupLoginBtn?.setOnClickListener {
-            listener?.actionClickLoginRegister3Fragment()
+            listener?.register3FragmentActionClickLoginBtn()
         }
 
         binding?.signupNextBtn?.setOnClickListener {
-            listener?.actionClickNextBtn()
+            listener?.register3FragmentActionClickNextBtn()
         }
 
         binding?.signupBackButton?.setOnClickListener {
-            listener?.actionClickBackRegister3Fragment()
+            listener?.register3FragmentActionClickBackBtn()
         }
     }
 

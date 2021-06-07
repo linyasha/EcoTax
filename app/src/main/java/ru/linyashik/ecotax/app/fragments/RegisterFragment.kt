@@ -1,4 +1,4 @@
-package ru.linyashik.ecotax.app.activity.loginSignup
+package ru.linyashik.ecotax.app.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -6,15 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegisterFragment
 import ru.linyashik.ecotax.databinding.ActivityLoginBinding
 import ru.linyashik.ecotax.databinding.ActivityRegisterBinding
 
 class RegisterFragment: Fragment() {
-    //Communication with activity
-    interface ActionPerformedListenerRegisterFragment {
-        fun actionClickRegisterBtn()
-        fun actionClickHaveAccount()
-    }
 
     //Variables
     private var listener: ActionPerformedListenerRegisterFragment? = null
@@ -40,10 +36,10 @@ class RegisterFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.haveAccountBtn?.setOnClickListener {
-          listener?.actionClickHaveAccount()
+          listener?.registerFragmentActionClickHaveAccountBtn()
         }
         binding?.registerBtn?.setOnClickListener {
-            listener?.actionClickRegisterBtn()
+            listener?.registerFragmentActionClickRegisterBtn()
         }
 
     }

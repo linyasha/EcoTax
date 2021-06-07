@@ -6,11 +6,21 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import ru.linyashik.ecotax.R
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerLoginFragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister2Fragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister3Fragment
+import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegisterFragment
+import ru.linyashik.ecotax.app.fragments.LoginFragment
+import ru.linyashik.ecotax.app.fragments.Register2Fragment
+import ru.linyashik.ecotax.app.fragments.Register3Fragment
+import ru.linyashik.ecotax.app.fragments.RegisterFragment
 import ru.linyashik.ecotax.databinding.ActivityAuthenticationMainBinding
 
-class AuthenticationMain : AppCompatActivity(), LoginFragment.ActionPerformedListenerLoginFragment,
-RegisterFragment.ActionPerformedListenerRegisterFragment,
-    Register2Fragment.ActionPerformedListenerRegister2Fragment {
+class AuthenticationMain : AppCompatActivity(), ActionPerformedListenerLoginFragment,
+    ActionPerformedListenerRegisterFragment,
+    ActionPerformedListenerRegister2Fragment,
+    ActionPerformedListenerRegister3Fragment
+{
 
     private lateinit var binding: ActivityAuthenticationMainBinding
 
@@ -31,17 +41,29 @@ RegisterFragment.ActionPerformedListenerRegisterFragment,
         }
         openLoginFragment()
     }
+
     private fun openLoginFragment() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, LoginFragment())
+            .replace(R.id.container, LoginFragment())
             .commit()
     }
 
-    override fun actionClickLoginBtn() {
-
+    //Press Login button on the LoginFragment
+    override fun loginFragmentActionClickLoginBtn() {
+        //TODO("Add authentication logic ")
+    }
+    //Press New user button on the LoginFragment
+    override fun loginFragmentActionClickNewUserBtn() {
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment,
+                R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment)
+            .replace(R.id.container, RegisterFragment())
+            .commit()
     }
 
-    override fun actionClickRegisterBtn() {
+    //Press Register button on the RegisterFragment
+    override fun registerFragmentActionClickRegisterBtn() {
+        //TODO("Add check for valid values in fields and save state in fields")
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment,
                 R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment)
@@ -50,37 +72,57 @@ RegisterFragment.ActionPerformedListenerRegisterFragment,
             .commit()
     }
 
-    override fun actionClickNewUserBtn() {
+
+    //Press Have Account button on the RegisterFragment
+    override fun registerFragmentActionClickHaveAccountBtn() {
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment,
+                R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment)
+            .replace(R.id.container, LoginFragment())
+            .commit()
+    }
+
+    //Press Next button on the Register2Fragment
+    override fun register2FragmentActionClickNextBtn() {
+        //TODO("Add check for valid values in fields and save state in fields")
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment,
-            R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment)
-            .replace(R.id.container, RegisterFragment())
+                R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment)
+            .addToBackStack(null)
+            .replace(R.id.container, Register3Fragment())
             .commit()
     }
 
-    override fun actionClickHaveAccount() {
+    //Press Login button on the Register2Fragment
+    override fun register2FragmentActionClickLoginBtn() {
+        supportFragmentManager.popBackStack()
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment,
                 R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment)
             .replace(R.id.container, LoginFragment())
             .commit()
-    }
-
-    override fun actionClickNextBtn() {
-        TODO("Not yet implemented")
-    }
-
-    override fun actionClickLoginRegister2Fragment() {
-        supportFragmentManager.beginTransaction()
-            .setCustomAnimations(R.anim.enter_left_to_right_fragment, R.anim.exit_left_to_right_fragment,
-                R.anim.enter_right_to_left_fragment, R.anim.exit_right_to_left_fragment)
-            .replace(R.id.container, LoginFragment())
-            .commit()
-    }
-
-    override fun actionClickBackRegister2Fragment() {
 
     }
 
+    //Press Back button on the Register2Fragment
+    override fun register2FragmentActionClickBackBtn() {
+        onBackPressed()
+    }
+
+    //Press Next button on the Register3Fragment
+    override fun register3FragmentActionClickNextBtn() {
+        //TODO("Add authentication logic and check for valid values in fields")
+    }
+
+    //Press Back button on the Register3Fragment
+    override fun register3FragmentActionClickBackBtn() {
+        register2FragmentActionClickBackBtn()
+    }
+
+    //Press Login button on the Register3Fragment
+    override fun register3FragmentActionClickLoginBtn() {
+        supportFragmentManager.popBackStack()
+        register2FragmentActionClickLoginBtn()
+    }
 
 }
