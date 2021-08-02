@@ -5,22 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister3Fragment
+import ru.linyashik.ecotax.R
+import ru.linyashik.ecotax.app.activity.loginSignup.AuthenticationMain
 import ru.linyashik.ecotax.databinding.ActivityRegister2FragmentBinding
 import ru.linyashik.ecotax.databinding.ActivityRegister3FragmentBinding
 
 class Register3Fragment: Fragment() {
 
     //Variables
-    private var listener: ActionPerformedListenerRegister3Fragment? = null
     private var binding: ActivityRegister3FragmentBinding? = null
-
-    //Attach listener to MainActivity
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        listener = context as ActionPerformedListenerRegister3Fragment
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,17 +30,24 @@ class Register3Fragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Open Login Fragment
         binding?.signupLoginBtn?.setOnClickListener {
-            listener?.register3FragmentActionClickLoginBtn()
+            (activity as AuthenticationMain).navController.navigate(R.id.action_register3Fragment_to_loginFragment)
         }
-
+        //Finish register
         binding?.signupNextBtn?.setOnClickListener {
-            listener?.register3FragmentActionClickNextBtn()
+            //TODO(Write data to DB and login)
+        }
+        //Open Register2 Fragment
+        binding?.signupBackButton?.setOnClickListener {
+            (activity as AuthenticationMain).navController.navigate(R.id.action_register3Fragment_to_register2Fragment)
         }
 
-        binding?.signupBackButton?.setOnClickListener {
-            listener?.register3FragmentActionClickBackBtn()
-        }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }
+

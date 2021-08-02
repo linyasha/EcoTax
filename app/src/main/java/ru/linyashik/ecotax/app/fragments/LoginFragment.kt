@@ -6,20 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerLoginFragment
+import ru.linyashik.ecotax.R
+import ru.linyashik.ecotax.app.activity.loginSignup.AuthenticationMain
 import ru.linyashik.ecotax.databinding.ActivityLoginBinding
 
 class LoginFragment: Fragment() {
 
     //Variables
-    private var listener: ActionPerformedListenerLoginFragment? = null
     private var binding: ActivityLoginBinding? = null
 
-    //Attach listener to MainActivity
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        listener = context as ActionPerformedListenerLoginFragment
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,18 +24,22 @@ class LoginFragment: Fragment() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding?.root
         return view
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Send request to DB for Login
         binding?.loginBtn?.setOnClickListener {
-           listener?.loginFragmentActionClickLoginBtn()
+            //TODO(Request to DB)
         }
-
+        //Open Register Fragment
         binding?.createAccountBtn?.setOnClickListener {
-            listener?.loginFragmentActionClickNewUserBtn()
+            (activity as AuthenticationMain).navController.navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }

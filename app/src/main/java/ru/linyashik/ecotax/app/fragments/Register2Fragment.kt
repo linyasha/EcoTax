@@ -6,21 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.linyashik.ecotax.app.activity.loginSignup.interfaces.ActionPerformedListenerRegister2Fragment
+import ru.linyashik.ecotax.R
+import ru.linyashik.ecotax.app.activity.loginSignup.AuthenticationMain
 import ru.linyashik.ecotax.databinding.ActivityRegister2FragmentBinding
 
 
 class Register2Fragment: Fragment() {
 
     //Variables
-    private var listener: ActionPerformedListenerRegister2Fragment? = null
     private var binding: ActivityRegister2FragmentBinding? = null
-
-    //Attach listener to MainActivity
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        listener = context as ActionPerformedListenerRegister2Fragment
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,17 +29,23 @@ class Register2Fragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Open Login Fragment
         binding?.signupLoginBtn?.setOnClickListener {
-            listener?.register2FragmentActionClickLoginBtn()
+            (activity as AuthenticationMain).navController.navigate(R.id.action_register2Fragment_to_loginFragment)
         }
-
+        //Open Register2 Fragment
         binding?.signupNextBtn?.setOnClickListener {
-            listener?.register2FragmentActionClickNextBtn()
+            (activity as AuthenticationMain).navController.navigate(R.id.action_register2Fragment_to_register3Fragment)
+        }
+        //Open Register Fragment
+        binding?.signupBackButton?.setOnClickListener {
+            (activity as AuthenticationMain).navController.navigate(R.id.action_register2Fragment_to_registerFragment)
         }
 
-        binding?.signupBackButton?.setOnClickListener {
-            listener?.register2FragmentActionClickBackBtn()
-        }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }
